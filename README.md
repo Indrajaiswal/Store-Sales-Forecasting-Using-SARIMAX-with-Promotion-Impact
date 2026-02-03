@@ -42,74 +42,74 @@ Target Variable: sales
 
 ## 🧼 Data Preprocessing
 
-Converted date column to datetime index
+- Converted date column to datetime index
 
-Checked and handled missing values
+- Checked and handled missing values
 
-Aggregated data at daily level
+- Aggregated data at daily level
 
-Optional log transformation for stability
+- Optional log transformation for stability
 
-Prepared exogenous variables for SARIMAX
+- Prepared exogenous variables for SARIMAX
 
-Holiday features processed for Prophet
+- Holiday features processed for Prophet
 
-## 🤖 Model Development:
-Models Used
+### 🤖 Model Development:
+## Models Used
 
-ARIMA
+** ARIMA
 
-Captures historical trends and autocorrelation
+- Captures historical trends and autocorrelation
 
-Does not support seasonality or promotions
+- Does not support seasonality or promotions
 
-Used as a baseline model
+- Used as a baseline model
 
-SARIMAX
+**SARIMAX
 
-Extends ARIMA with:
+- Extends ARIMA with:
 
-Weekly seasonality (7 days)
+- Weekly seasonality (7 days)
 
-Exogenous variable (onpromotion)
+- Exogenous variable (onpromotion)
 
-Learns how promotions historically affect sales
+- Learns how promotions historically affect sales
 
-Enables promotion-based scenario forecasting
+- Enables promotion-based scenario forecasting
 
-Prophet
+** Prophet
 
-Automatically models trend and seasonality
+- Automatically models trend and seasonality
 
-Tested with and without holiday effects
+- Tested with and without holiday effects
 
-Evaluation Metrics
+## Evaluation Metrics
 
-MAE (Mean Absolute Error)
+- MAE (Mean Absolute Error)
 
-RMSE (Root Mean Squared Error)
+- RMSE (Root Mean Squared Error)
 
-AIC (Akaike Information Criterion)
+- AIC (Akaike Information Criterion)
 
-Time Series Cross-Validation
+- Time Series Cross-Validation
 
-Hyperparameter Tuning
+## Hyperparameter Tuning
 
-ARIMA
+**ARIMA
 
-Grid search for (p, d, q)
+- Grid search for (p, d, q)
 
-SARIMAX
+** SARIMAX
 
-Grid search for (p, d, q) and seasonal (P, D, Q, s)
+- Grid search for (p, d, q) and seasonal (P, D, Q, s)
 
-Prophet
+**Prophet
 
-changepoint_prior_scale
+- changepoint_prior_scale
 
-seasonality_prior_scale
+- seasonality_prior_scale
 
-holidays_prior_scale
+- holidays_prior_scale
 
 ### Local Setup
 1. **Clone the repo:**
@@ -124,7 +124,7 @@ holidays_prior_scale
 
   3. **Install fixed dependencies:**
      ```bash
-    pip install -r requirements.txt
+     pip install -r requirements.txt
      
   4. **Run the app:**
      ```bash
@@ -150,32 +150,32 @@ holidays_prior_scale
 While ARIMA showed lower error, SARIMAX was selected for production because it allows business users to simulate "What-If" scenarios regarding promotions. The analysis revealed that while promotions influence sales, historical seasonality remains the dominant driver of demand.
 
 
-## 🚀 Deployment:
-The trained SARIMAX model is saved using Joblib and deployed with Streamlit.
+### 🚀 Deployment:
+## The trained SARIMAX model is saved using Joblib and deployed with Streamlit.
 
-Dashboard Capabilities:
+** Dashboard Capabilities:
 
-Visualize historical sales trends
+- Visualize historical sales trends
 
-Forecast future sales for 7–90 days
+- Forecast future sales for 7–90 days
 
-Simulate promotion scenarios:
+** Simulate promotion scenarios:
 
-No Promotion
+- No Promotion
 
-Full Promotion
+- Full Promotion
 
-Custom Promotion
+- Custom Promotion
 
-Display KPIs:
+** Display KPIs:
 
-Latest sales
+- Latest sales
 
-Average sales
+- Average sales
 
-Number of promotion days
+- Number of promotion days
 
-Download forecast results as CSV
+- Download forecast results as CSV
 
 ## 🧪 Run Locally:
 git clone  https://github.com/Indrajaiswal/Store-Sales-Forecasting-Using-SARIMAX-with-Promotion-Impact.git
